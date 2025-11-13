@@ -4,8 +4,11 @@ void main() {
   print("Простые операции.\n");
   print("Задание №1:\n");
 
-  int num1 = 3;
-  double num2 = 4.2;
+  stdout.write("Введите первое целое число: ");
+  int num1 = int.parse(stdin.readLineSync()!);
+
+  stdout.write("Введите первое дробное число: ");
+  double num2 = double.parse(stdin.readLineSync()!);
 
   print("Сложение чисел = ${num1 + num2}");
   print("Вычитание чисел = ${num1 - num2}");
@@ -14,8 +17,11 @@ void main() {
 
   print("\nЗадание №2:\n");
 
-  double far = 2.2;
-  int cel = 5;
+  stdout.write("Введите градусы фарингейта: ");
+  double far = double.parse(stdin.readLineSync()!);
+
+  stdout.write("Введите градусы цельсия: ");
+  double cel = double.parse(stdin.readLineSync()!);
 
   print("Градусы фарингейта = ${(far * 1.8) + 32}");
   print("Градусы цельсия  = ${(cel - 32) / 1.8}");
@@ -30,18 +36,15 @@ void main() {
 
   print("\nЗадание №4:\n");
 
-  int evenNumber = 4;
+  stdout.write("Введите число для проверки на четность: ");
+  int checkNumber = int.parse(stdin.readLineSync()!);
 
-  int oddNumber = 3;
-
-  print("Являеься ли чётным число evenNumber? ${evenNumber == 4}");
-  print("Являеься ли нечётным число oddNumber? ${oddNumber == 3}\n");
-  print("Являеься ли нечётным число evenNumber? ${evenNumber == 3}");
-  print("Являеься ли чётным число oddNumber? ${oddNumber == 4}");
+  print("Число $checkNumber четное? ${checkNumber % 2 == 0}");
+  print("Число $checkNumber нечетное? ${checkNumber % 2 != 0}");
 
   print("\nЗадание №5:\n");
 
-  int number = 123456789;
+  int number = int.parse(stdin.readLineSync()!);
 
   int sum1 = number
       .toString()
@@ -56,47 +59,58 @@ void main() {
   print("\nРабота со строками.\n");
   print("Задание №1:\n");
 
-  String str = "Здравствуйте, Сергей Михалович!";
-  int sum2 = str.length;
+  stdout.write("Введите текст: ");
+  String str1 = stdin.readLineSync()!;
 
-  print("Текст:${str}");
+  int sum2 = str1.length;
+
   print("Сумма символов:${sum2}.");
 
   print("\nЗадание №2:\n");
 
-  String text = "Здравствуйте, Сергей Михалович!";
+  stdout.write("Введите текст: ");
+  String text = stdin.readLineSync()!;
 
-  print("Текст:${text}");
-  print(
-      "И сделаем проверку,если мы напишем слово 'здравствуйте' с маленькой буквы.");
-  print("И вот что выведет: ${text.contains("здравствуйте")}");
+  stdout.write("Введите слово для поиска: ");
+  String word = stdin.readLineSync()!;
+
+  print("Содержит ли текст слово '$word'? ${text.toLowerCase()
+  .contains(searchWord.toLowerCase())}");
 
   print("\nЗадание №3:\n");
 
-  String text2 = "Здравствуйте, Сергей Михалович!";
-  String text3 = text2.replaceAll("Здравствуйте", "Досвидания");
+  stdout.write("Введите текст: ");
+  String text2 = stdin.readLineSync()!;
 
-  print("Текст:${text2}");
-  print("И сделаем замену вхождения подстроки в строку на другую строку.");
-  print("И вот что выведет: ${text3}");
+  stdout.write("Введите слово для замены: ");
+  String oldword = stdin.readLineSync()!;
+
+  stdout.write("Введите новое слово: ");
+  String newWord = stdin.readLineSync()!;
+
+  String text3 = text2.replaceAll(oldWord, newWord);
+  print("Tекст до: $text2");
+  print("Текст после : $text3");
 
   print("\nЗадание №4:\n");
 
   String text4 = "Dart";
 
-  String reversed = text4.split('').reversed.join('-');
+  stdout.write("Введите слово для реверса: ");
+  String text4 = stdin.readLineSync()!;
 
-  print("Текст:${text4}");
-  print("И вот что выведет: ${reversed}");
+  String reversed = text4.split('').reversed.join('-');
+  print("Cлово до: $text4");
+  print("Слово после: $reversed");
 
   print("\nЗадание №5:\n");
 
-  String text5 = "DART";
+  stdout.write("Введите слово в верхнем регистре: ");
+  String text5 = stdin.readLineSync()!;
 
   String reversed1 = text5.toLowerCase().split('').reversed.join('+');
-
-  print("Текст:${text5}");
-  print("И вот что выведет: ${reversed1}");
+  print("Cлово до: $text5");
+  print("Слово после: $reversed1");
 
   print("\n===========================================");
 
