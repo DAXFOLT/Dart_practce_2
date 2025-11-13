@@ -45,6 +45,7 @@ void main() {
 
   print("\nЗадание №5:\n");
 
+  stdout.write("Введите число: ");
   int number = int.parse(stdin.readLineSync()!);
 
   int sum1 = number
@@ -75,8 +76,8 @@ void main() {
   stdout.write("Введите слово для поиска: ");
   String word = stdin.readLineSync()!;
 
-  print("Содержит ли текст слово '$word'? ${text.toLowerCase()
-  .contains(searchWord.toLowerCase())}");
+  print(
+      "Содержит ли текст слово '$word'? ${text.toLowerCase().contains(word.toLowerCase())}");
 
   print("\nЗадание №3:\n");
 
@@ -84,18 +85,16 @@ void main() {
   String text2 = stdin.readLineSync()!;
 
   stdout.write("Введите слово для замены: ");
-  String oldword = stdin.readLineSync()!;
+  String word2 = stdin.readLineSync()!;
 
   stdout.write("Введите новое слово: ");
-  String newWord = stdin.readLineSync()!;
+  String word3 = stdin.readLineSync()!;
 
-  String text3 = text2.replaceAll(oldWord, newWord);
+  String text3 = text2.replaceAll(word2, word3);
   print("Tекст до: $text2");
   print("Текст после : $text3");
 
   print("\nЗадание №4:\n");
-
-  String text4 = "Dart";
 
   stdout.write("Введите слово для реверса: ");
   String text4 = stdin.readLineSync()!;
